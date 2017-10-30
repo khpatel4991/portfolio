@@ -26,8 +26,8 @@ namespace :deploy do
   after :updated, :npm_install
   after :updated, :link_shared_npm_modules
   after :updated, :build_project
-  after :finished, :stop_server
-  after :finished, :start_server
+  after :finished, :restart_server
+  # after :finished, :start_server
 
   desc "Check Logs"
   task :check_logs do
