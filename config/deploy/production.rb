@@ -1,0 +1,1 @@
+server '54.163.78.142', user: 'portfolio', roles: %w{app db web}
