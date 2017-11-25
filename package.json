@@ -21,7 +21,9 @@
   "homepage": "https://github.com/khpatel4991/portfolio#readme",
   "dependencies": {
     "fastify": "^0.30.3",
+    "material-ui": "next",
     "next": "^4.1.4",
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
