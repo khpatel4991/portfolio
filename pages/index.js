@@ -1,34 +1,68 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'material-ui/Button';
+import Router from 'next/router';
 import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
-import withRoot from '../src/hoc/WithRoot';
+import Grid from 'material-ui/Grid';
+import IconButton from 'material-ui/IconButton';
+import FaGithub from 'react-icons/lib/fa/github';
+import FaLinkedin from 'react-icons/lib/fa/linkedin';
+import FaTwitter from 'react-icons/lib/fa/twitter';
 
-const styles = {
+import Page from '../src/components/Page';
+
+const styles = theme => ({
   root: {
     textAlign: 'center',
     paddingTop: 200,
   },
-};
+  button: {
+    margin: theme.spacing.unit,
+  },
+});
+
+const social = [{
+  label: 'Github',
+  link: 'https://github.com/khpatel4991',
+  component: <FaGithub color="#000" />,
+}, {
+  label: 'Linkedin',
+  link: 'https://linkedin.com/in/khpatel4991',
+  component: <FaLinkedin color="#0077b5" />,
+}, {
+  label: 'Twitter',
+  link: 'https://twitter.com/khpatel4991',
+  component: <FaTwitter color="#1da1f2" />,
+}];
 
 class Home extends Component {
-  componentDidMount() {
-    console.log('Component Mounted');
+  static handleButton(link) {
+    Router.push(link);
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <div className={this.props.classes.root}>
-        <Typography type="display1" gutterBottom>
+      <div className={classes.root}>
+        <Typography type="display1">
           Kashyap Patel
         </Typography>
         <Typography type="subheading" gutterBottom>
-          Portfolio Site
+          I'm a Full-Stack Developer.
         </Typography>
-        <Button raised color="accent">
-          Contact Me
-        </Button>
+        <Grid container justify="center" alignContent="center">
+          {social.map((item, i) => (
+            <Grid key={i} item>
+              <a href={item.link} target="_blank">
+                <IconButton
+                  className={classes.button}
+                  aria-label={item.label}
+                >
+                  {item.component}
+                </IconButton>
+              </a>
+            </Grid>
+          ))}
+        </Grid>
       </div>
     );
   }
@@ -37,7 +71,8 @@ class Home extends Component {
 Home.propTypes = {
   classes: PropTypes.shape({
     root: PropTypes.string.isRequired,
+    button: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default withRoot(withStyles(styles)(Home));
+export default Page(Home, styles);

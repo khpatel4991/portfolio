@@ -8,6 +8,9 @@ import green from 'material-ui/colors/green';
 import createGenerateClassName from 'material-ui/styles/createGenerateClassName';
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Roboto Mono, monospace !important',
+  },
   palette: {
     primary: purple,
     secondary: green,
