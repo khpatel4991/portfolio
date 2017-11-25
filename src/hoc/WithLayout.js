@@ -93,12 +93,12 @@ const layout = (BaseComponent) => {
         <div>
           <div className={classes.drawerHeader} />
           <List>
-          <ListItem button>
-            <ListItemText primary="Blog" />
-          </ListItem>
-          <ListItem button>
-            <ListItemText primary="About Me" />
-          </ListItem>
+            <ListItem button>
+              <ListItemText primary="Blog" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="About Me" />
+            </ListItem>
           </List>
         </div>
       );

@@ -23,6 +23,7 @@ class MyDocument extends Document {
             homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
           */}
           <link rel="manifest" href="/static/manifest.json" />
+          <link rel="stylesheet" href="/static/styles/typist.css" />
           {/* PWA primary color */}
           <meta name="theme-color" content={this.props.stylesContext.theme.palette.primary[500]} />
           <link

@@ -7,6 +7,7 @@ import IconButton from 'material-ui/IconButton';
 import FaGithub from 'react-icons/lib/fa/github';
 import FaLinkedin from 'react-icons/lib/fa/linkedin';
 import FaTwitter from 'react-icons/lib/fa/twitter';
+import Typist from 'react-typist';
 
 import Page from '../src/components/Page';
 
@@ -47,7 +48,7 @@ class Home extends Component {
           Kashyap Patel
         </Typography>
         <Typography type="subheading" gutterBottom>
-          I'm a Full-Stack Developer.
+          <Typist typing={1}>I am a Full-Stack Developer.</Typist>
         </Typography>
         <Grid container justify="center" alignContent="center">
           {social.map((item, i) => (
