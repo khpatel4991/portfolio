@@ -43,7 +43,7 @@ namespace :deploy do
   task :npm_install do
     on release_roles(:all) do
       within release_path do
-        execute "cd #{release_path}/ && npm i -s"
+        execute "cd #{release_path}/ && yarn -s"
       end
     end
   end
@@ -70,7 +70,7 @@ namespace :deploy do
   task :build_project do
     on release_roles(:all) do
       within release_path do
-        execute "cd #{release_path}/ && npm run build"
+        execute "cd #{release_path}/ && yarn run build"
       end
     end
   end
