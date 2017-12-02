@@ -15,16 +15,20 @@ const styles = theme => ({
   root: {
     textAlign: 'center',
     paddingTop: 200,
+    background: 'black',
   },
   button: {
     margin: theme.spacing.unit,
+  },
+  subheading: {
+    color: 'white',
   },
 });
 
 const social = [{
   label: 'Github',
   link: 'https://github.com/khpatel4991',
-  component: <FaGithub color="#000" />,
+  component: <FaGithub color="#fff" />,
 }, {
   label: 'Linkedin',
   link: 'https://linkedin.com/in/khpatel4991',
@@ -44,11 +48,13 @@ class Home extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography type="display1">
+        <Typography type="display1" gutterBottom>
           Kashyap Patel
         </Typography>
-        <Typography type="subheading" gutterBottom>
-          <Typist typing={1}>I am a Full-Stack Developer.</Typist>
+        <Typography type="subheading" gutterBottom className={classes.subheading}>
+          <Typist>
+            I am a Software Developer.
+          </Typist>
         </Typography>
         <Grid container justify="center" alignContent="center">
           {social.map((item, i) => (

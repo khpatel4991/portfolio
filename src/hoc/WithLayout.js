@@ -43,7 +43,6 @@ const styles = theme => ({
     flex: 1,
   },
   navContainer: {
-    float: 'right',
     justifyContent: 'flex-end',
   },
   navIconHide: {
@@ -51,20 +50,27 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  drawerHeader: theme.mixins.toolbar,
+  drawerHeader: {
+    ...theme.mixins.toolbar,
+    background: 'black',
+  },
   drawerPaper: {
     width: 250,
+    background: 'black',
     [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       position: 'relative',
       height: '100%',
     },
   },
+  listItemText: {
+    'color > *': 'white',
+  },
   content: {
     backgroundColor: theme.palette.background.default,
     width: '100%',
-    padding: theme.spacing.unit * 3,
     height: 'calc(100% - 56px)',
+    background: 'black',
     marginTop: 56,
     [theme.breakpoints.up('sm')]: {
       height: 'calc(100% - 64px)',
@@ -80,7 +86,7 @@ const layout = (BaseComponent) => {
     }
 
     state = {
-      mobileOpen: false,
+      mobileOpen: true,
     };
   
     handleDrawerToggle = () => {
@@ -94,10 +100,10 @@ const layout = (BaseComponent) => {
           <div className={classes.drawerHeader} />
           <List>
             <ListItem button>
-              <ListItemText primary="Blog" />
+              <ListItemText primary="Blog" className={classes.listItemText} />
             </ListItem>
             <ListItem button>
-              <ListItemText primary="About Me" />
+              <ListItemText primary="About Me" className={classes.listItemText} />
             </ListItem>
           </List>
         </div>
