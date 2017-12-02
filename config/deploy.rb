@@ -14,9 +14,10 @@ set :pty, true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ['/home/kashyap/aws_key_pair/kashyaprutgers.pem']
+  keys: ['C:\Users\khpat\Dev\kashyaprutgers.pem']
 }
 
+  
 append :linked_dirs, "node_modules"
 
 pm2 = "/home/portfolio/.npm-global/bin/pm2"
