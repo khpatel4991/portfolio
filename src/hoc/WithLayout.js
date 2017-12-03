@@ -13,6 +13,8 @@ import Divider from 'material-ui/Divider';
 import Button from 'material-ui/Button';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 
+import Router from 'next/router';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -86,12 +88,16 @@ const layout = (BaseComponent) => {
     }
 
     state = {
-      mobileOpen: true,
+      mobileOpen: false,
     };
   
     handleDrawerToggle = () => {
       this.setState({ mobileOpen: !this.state.mobileOpen });
     };
+
+    route(pathname) {
+      Router.push(pathname);
+    }
 
     render() {
       const { classes, theme } = this.props;
@@ -144,8 +150,8 @@ const layout = (BaseComponent) => {
               <AppBar className={classes.fullAppBar}>
                 <Toolbar>
                   <Typography className={classes.flex} />
-                  <Button color="contrast">Blog</Button>
-                  <Button color="contrast">About Me</Button>
+                  <Button color="contrast" onClick={this.route.bind(this, '/blog')}>Blog</Button>
+                  <Button color="contrast" onClick={this.route.bind(this, '/aboutme')}>About Me</Button>
                 </Toolbar>
               </AppBar>
             </Hidden>
