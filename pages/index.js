@@ -20,20 +20,22 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
-  subheading: {
-    color: 'white',
-  },
+  appFrame: {},
+  content: {},
 });
 
 const social = [{
+  index: 0,
   label: 'Github',
   link: 'https://github.com/khpatel4991',
   component: <FaGithub color="#fff" />,
 }, {
+  index: 1,
   label: 'Linkedin',
   link: 'https://linkedin.com/in/khpatel4991',
   component: <FaLinkedin color="#0077b5" />,
 }, {
+  index: 2,
   label: 'Twitter',
   link: 'https://twitter.com/khpatel4991',
   component: <FaTwitter color="#1da1f2" />,
@@ -51,14 +53,14 @@ class Home extends Component {
         <Typography type="display1" gutterBottom>
           Kashyap Patel
         </Typography>
-        <Typography type="subheading" gutterBottom className={classes.subheading}>
+        <Typography type="subheading" gutterBottom>
           <Typist>
             I am a Software Developer.
           </Typist>
         </Typography>
         <Grid container justify="center" alignContent="center">
-          {social.map((item, i) => (
-            <Grid key={i} item>
+          {social.map(item => (
+            <Grid key={item.index} item>
               <a href={item.link} target="_blank">
                 <IconButton
                   className={classes.button}

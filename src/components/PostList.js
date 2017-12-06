@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
+import Typography from 'material-ui/Typography';
+import format from 'date-fns/format'
+import { graphql } from 'react-apollo';
 
 const POSTS_PER_PAGE = 10;
 
@@ -18,26 +20,33 @@ const PostList = ({ data: { loading, error, allPosts, _allPostsMeta }, loadMoreP
       <section>
         <ul>
           {allPosts.map(post => (
-            <li key={post.id}>
+            <div key={post.id}>
               <div>
-                <h3>{post.title}</h3>
-                <p>{post.body}</p>
-                <small>Last Updated: {post.updatedAt}</small>
+                <Typography type="display1" gutterBottom>
+                  {post.title}
+                </Typography>
+                <Typography type="body2" gutterBottom paragraph>
+                  {post.body}
+                </Typography>
+                <Typography type="caption" gutterBottom>
+                  {format(post.updatedAt, 'MMM Do YYYY')}
+                </Typography>
               </div>
-            </li>
+            </div>
           ))}
         </ul>
         {areMorePosts ? <button onClick={loadMorePosts}> {loading ? 'Loading...' : 'Show More'} </button> : ''}
       </section>
     );
   }
+  return null;
 };
 
 PostList.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
-    error: PropTypes.string.isRequired,
     allPosts: PropTypes.array.isRequired,
+    error: PropTypes.string,
   }).isRequired,
   loadMorePosts: PropTypes.func.isRequired,
 };

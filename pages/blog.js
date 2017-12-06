@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import PostList from '../src/components/PostList';
 import PageWithData from '../src/components/PageWithData';
+
+const styles = {
+  root: {
+    backgroundColor: 'black',
+    color: 'white',
+  },
+  appFrame: {},
+  content: {},
+};
 
 class Blog extends Component {
   componentDidMount() {
@@ -10,10 +18,13 @@ class Blog extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <PostList />
+      <div className={classes.root}>
+        <PostList />
+      </div>
     );
   }
 }
 
-export default PageWithData(Blog);
+export default PageWithData(Blog, styles);
