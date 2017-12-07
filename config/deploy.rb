@@ -14,7 +14,7 @@ set :pty, true
 set :ssh_options, {
   forward_agent: true,
   auth_methods: ["publickey"],
-  keys: ['C:\Users\khpat\Dev\kashyaprutgers.pem']
+  keys: [ENV['AWS_PEM_KEY']]
 }
 
   

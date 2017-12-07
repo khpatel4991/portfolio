@@ -65,10 +65,10 @@ const theme = createMuiTheme({
       color: 'rgba(255, 255, 255, 0.87)',
     },
     body2: {
-      fontSize: '.875rem',
+      fontSize: '.89rem',
       fontWeight: 500,
       fontFamily: "'Roboto Mono', monospace",
-      lineHeight: '.71429em',
+      lineHeight: '1.49em',
       color: 'rgba(255, 255, 255, 0.87)',
     },
     body1: {

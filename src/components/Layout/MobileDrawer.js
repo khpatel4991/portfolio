@@ -32,12 +32,6 @@ const styles = theme => ({
     ...theme.mixins.toolbar,
     background: 'black',
   },
-  listItemText: {
-    'color > *': 'white',
-  },
-  currentListItemText: {
-    'color > *': '#034694',
-  },
 });
 
 const navList = [
@@ -71,15 +65,23 @@ class MobileDrawer extends PureComponent {
       <div>
         <div className={classes.drawerHeader} />
         <List>
-          {navList.map(item => (
-            <ListItem key={item.index} button>
-              <ListItemText
-                primary={item.name}
-                className={item.path === currentPath ? classes.currentListItemText : classes.listItemText}
-                onClick={() => MobileDrawer.route(item.path)}
-              />
-            </ListItem>
-          ))}
+          {navList.map((item) => {
+            const listItemClasses = (item.path === currentPath) ?
+              classes.currentListItemText :
+              classes.listItemText;
+            return (
+              <ListItem
+                key={item.index}
+                button
+                className={listItemClasses}
+              >
+                <ListItemText
+                  primary={item.name}
+                  onClick={() => MobileDrawer.route(item.path)}
+                />
+              </ListItem>
+            );
+          })}
         </List>
       </div>
     );

@@ -7,7 +7,7 @@ import Navbar from '../components/Layout/Navbar';
 const styles = theme => ({
   root: {
     width: '100%',
-    height: 430,
+    height: '100%',
     zIndex: 1,
     overflow: 'hidden',
   },
@@ -23,6 +23,8 @@ const styles = theme => ({
     height: 'calc(100% - 56px)',
     background: 'black',
     marginTop: 56,
+    marginLeft: 120,
+    marginRight: 120,
     [theme.breakpoints.up('sm')]: {
       height: 'calc(100% - 64px)',
       marginTop: 64,
