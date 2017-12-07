@@ -26,6 +26,7 @@ namespace :deploy do
   #before :updated, :link_secrets
   after :updated, :npm_install
   after :updated, :link_shared_npm_modules
+  after :updated, :link_secrets
   after :updated, :build_project
   after :finished, :stop_server
   after :finished, :start_server
@@ -62,7 +63,7 @@ namespace :deploy do
   task :link_secrets do
     on release_roles(:all) do
       within release_path do
-        execute "ln #{fetch(:deploy_to)}/shared/config/secrets.json #{release_path}/src/config/secrets.json"
+        execute "ln -s #{fetch(:deploy_to)}/shared/env-config.js #{release_path}/env-config.js"
       end
     end
   end
