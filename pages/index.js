@@ -25,17 +25,17 @@ const styles = theme => ({
 });
 
 const social = [{
-  index: 0,
+  key: 0,
   label: 'Github',
   link: 'https://github.com/khpatel4991',
   component: <FaGithub color="#fff" />,
 }, {
-  index: 1,
+  key: 1,
   label: 'Linkedin',
   link: 'https://linkedin.com/in/khpatel4991',
   component: <FaLinkedin color="#0077b5" />,
 }, {
-  index: 2,
+  key: 2,
   label: 'Twitter',
   link: 'https://twitter.com/khpatel4991',
   component: <FaTwitter color="#1da1f2" />,
@@ -60,7 +60,7 @@ class Home extends Component {
         </Typography>
         <Grid container justify="center" alignContent="center">
           {social.map(item => (
-            <Grid key={item.index} item>
+            <Grid key={item.key} item>
               <a href={item.link} target="_blank">
                 <IconButton
                   className={classes.button}
