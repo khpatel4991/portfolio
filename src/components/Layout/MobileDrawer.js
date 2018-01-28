@@ -36,7 +36,7 @@ const styles = theme => ({
 
 const navList = [
   { index: 0, name: 'Home', path: '/' },
-  { index: 1, name: 'Blog', path: '/blog' },
+  { index: 1, name: 'Blog', path: 'https://khpatel4991.github.io/gatsby-react-blog-tutorial/' },
   { index: 2, name: 'About Me', path: '/aboutme' },
 ];
 
