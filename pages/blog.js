@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PostList from '../src/components/PostList';
-import PageWithData from '../src/components/PageWithData';
+import Page from '../src/components/Page';
 
 const styles = {
   root: {
@@ -27,4 +27,4 @@ class Blog extends Component {
   }
 }
 
-export default PageWithData(Blog, styles);
+export default Page(Blog, styles);
