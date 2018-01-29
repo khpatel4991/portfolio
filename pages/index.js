@@ -46,6 +46,10 @@ class Home extends Component {
     Router.push(link);
   }
 
+  componentDidMount() {
+    console.log('Lets see some dynamic logs.');
+  }
+
   render() {
     const { classes } = this.props;
     return (
